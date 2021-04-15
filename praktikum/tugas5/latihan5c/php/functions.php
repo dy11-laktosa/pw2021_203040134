@@ -1,4 +1,11 @@
 <?php
+/*
+    Hady Ismanto Rachmat
+    203040134
+    Jumat, 13:00
+*/
+?>
+<?php
 // fungsi untuk melakukan koneksi ke database
 function koneksi()
 {

@@ -33,7 +33,7 @@ if (isset($_POST['ubah'])) {
     <title>Ubah Data</title>
     <style>
         .container {
-            border: 3px grey solid;
+            border: 4px grey solid;
             padding-left: 20px;
             margin-right: 50%;
             margin-left: 30%;
