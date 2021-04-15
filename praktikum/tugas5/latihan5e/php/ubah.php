@@ -1,6 +1,7 @@
 <?php
 require 'functions.php';
-//mengambil data url
+
+//mengambil data di url
 $id = $_GET['id'];
 
 //query data mahasiswa berdasarkan id
@@ -51,11 +52,11 @@ if (isset($_POST['ubah'])) {
             <ul>
                 <li>
                     <label for="name">Name :</label><br>
-                    <input type="text" name="name" id="name" required><br><br>
+                    <input type="text" name="name" id="name" required value="<?= $p['name']; ?>"><br><br>
                 </li>
                 <li>
                     <label for="description">Description :</label><br>
-                    <input type="text" name="description" id="description" required><br><br>
+                    <input type="text" name="description" id="description" required value="<?= $p['description']; ?>"><br><br>
                 </li>
                 <li>
                     <label for="size">Size :</label><br>
@@ -70,15 +71,15 @@ if (isset($_POST['ubah'])) {
                 <br>
                 <li>
                     <label for="price">Price :</label><br>
-                    <input type="text" name="price" id="price" required><br><br>
+                    <input type="text" name="price" id="price" required value="<?= $p['price']; ?>"><br><br>
                 </li>
                 <li>
                     <label for="category">Category :</label><br>
-                    <input type="text" name="category" id="category" required><br><br>
+                    <input type="text" name="category" id="category" required value="<?= $p['category']; ?>"><br><br>
                 </li>
                 <li>
                     <label for="picture">Picture :</label><br>
-                    <input type="text" name="picture" id="picture" required><br><br>
+                    <input type="text" name="picture" id="picture" required value="<?= $p['picture']; ?>"><br><br>
                 </li>
                 <br>
                 <button type="submit" name="ubah" style="background-color: #F0FFF0;">Ubah Data!</button>

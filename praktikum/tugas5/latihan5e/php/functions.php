@@ -1,4 +1,12 @@
 <?php
+/* 
+Hady Ismanto Rachmat
+203040134
+Jum'at 13:00
+*/
+?>
+
+<?php
 // fungsi untuk melakukan koneksi ke database
 function koneksi()
 {
@@ -49,7 +57,7 @@ function hapus($id)
     return mysqli_affected_rows($conn);
 }
 // function ubah data 
-function ubah($data) 
+function ubah($data)
 {
     $conn = koneksi();
 
@@ -64,15 +72,15 @@ function ubah($data)
     $query = "UPDATE walkrunstore SET
             
             name = '$name',
-            brand = '$description',
-            description = '$size',
+            description = '$description',
+            size = '$size',
             price = '$price',
             category = '$category',
             picture = '$picture'
             WHERE id = $id
             ";
-            
-            mysqli_query($conn, $query);
 
-            return mysqli_affected_rows($conn);
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
 }

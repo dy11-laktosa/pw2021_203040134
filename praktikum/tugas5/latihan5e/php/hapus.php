@@ -1,4 +1,12 @@
-<?php 
+<?php
+/* 
+Hady Ismanto Rachmat
+203040134
+Jum'at 13:00
+*/
+?>
+
+<?php
 
 require 'functions.php';
 $id = $_GET['id'];
@@ -14,3 +22,5 @@ if (hapus($id) > 0) {
             document.location.href = 'admin.php';
         </script>";
 }
+
+?>

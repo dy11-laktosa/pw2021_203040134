@@ -75,12 +75,12 @@ if (isset($_GET['cari'])) {
                         <th scope="row"><?= $i ?></th>
                         <td>
                             <a href="ubah.php?id=<?= $p["id"] ?>"><button style="background-color: skyblue ;">Ubah</button></a>
-                            <a href="hapus.php?id=<?= $p['id']; ?>" onclick="return confirm('yakin?');"><button style="background-color: crimson;">Hapus</button></a>
+                            <a href="hapus.php?id=<?= $p["id"]; ?>" onclick="return confirm('yakin?');"><button style="background-color: crimson;">Hapus</button></a>
                         </td>
                         <td><?= $p["name"]; ?></td>
                         <td><?= $p["description"]; ?></td>
                         <td><?= $p["size"]; ?></td>
-                        <td><?= $p["price"] ?></td>
+                        <td><?= $p["price"]; ?></td>
                         <td><?= $p["category"]; ?></td>
                         <td>
                             <img src="../assets/img/<?= $p["picture"]; ?>">

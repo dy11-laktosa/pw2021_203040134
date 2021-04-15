@@ -1,4 +1,12 @@
 <?php
+/* 
+Hady Ismanto Rachmat
+203040134
+Jum'at 13:00
+*/
+?>
+
+<?php
 // Mengecek apakah ada id yang dikirimkan
 // jika tidak maka akan dikembalikan ke halaman index.php
 if (!isset($_GET['id'])) {
