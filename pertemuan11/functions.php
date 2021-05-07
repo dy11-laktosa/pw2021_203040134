@@ -58,7 +58,7 @@ function tambah($data)
 function hapus($id)
 {
   $conn = koneksi();
-  mysqli_query($conn, "DELETE FFROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
+  mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
 function ubah($data)
