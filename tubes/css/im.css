@@ -1,0 +1,40 @@
+/* Background Color */
+
+.bg-main {
+  background-color: #000000 !important;
+}
+
+/* Text */
+.text-main {
+  color: #FDFCFA;
+}
+
+.text-sec {
+  color: #EAE4D9;
+}
+
+
+/* Button */
+.btn-1 {
+  color: #333 !important;
+  background-color: #E9CCB1 !important;
+}
+
+/* index.php */
+.home {
+  min-height: 650px;
+  background-image: black;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+}
+
+.home-text {
+  background-color: rgba(0, 4, 255, 0.4);
+  border: 2px solid #333;
+  color: #2f00ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
