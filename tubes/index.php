@@ -1,111 +1,73 @@
 <?php
-/*
-Hady Ismanto Rachmat
-203040134
-Jumat, 13:00
-*/
-?>
-
-<?php
-
-// menghubungkan dengan file php lainnya
+// Menghubungkan file php lain
 require 'php/functions.php';
 
-if (isset($_GET['cari'])) {
-    $keyword = $_GET['keyword'];
-    $shoes = query("SELECT * FROM walkrunstore WHERE
-    name LIKE '%$keyword%' OR
-    description LIKE '%$keyword%' OR
-    size LIKE '%$keyword%' OR
-    price LIKE '%$keyword%' OR
-    category LIKE '%$keyword%' 
-    ");
-} else {
-    $shoes = query("SELECT * FROM walkrunstore");
-}
+// Melakukan Query
+$shoes = query("SELECT * FROM walkrunstore");
+
+// ketika tombol cari ditekan
 if (isset($_POST['cari'])) {
     $shoes = cari($_POST['keyword']);
 }
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tubes</title>
-    <link rel="stylesheet" href="css/im.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/a.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
-
-
+    <link rel="stylesheet" href="css/im.css">
+    <title>walkrunstore</title>
 </head>
 
-<body style="background-image: url(assets/img/cc2.png);">
+<body style="background-image: url(assets/img/slider2.png);">
+
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-main mx-auto">
-        <div class="container">
-            <a href="index.php" class=" align-middle navbar-brand">Walkrunstore</a>
-            <ul class="navbar-nav">
-                <a class="nav-item nav-link page-scroll" href="php/login.php">
-                    <button type="button" class="btn btn-1"><i class="bi bi-box-arrow-in-right"></i> Login</button>
-                </a>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hady Ismanto Rachmat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li><a href="kuliah" class="btn btn-3 mb-3 fw-bold">kuliah </a></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="praktikum" class="btn btn-3 mb-3 fw-bold">praktikum</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="mine.php" class="btn btn-3 mb-3 fw-bold">tubes</a>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Home -->
-    <div class="home"></div>
-    <div class="home-text container my-20 py-20 text-center fw-bold">
-        <h1 class="display-1 py-3 fw-bold fst-italic">Walkrunstore</h1>
-        <p>Store yang sudah terpercaya,kualitas wahid, dan tentunya harga terjangkau.</p>
-    </div>
+    <!-- Main -->
+    <section id="main" class="container text-center">
+        <!-- Home/Main -->
+        <div>
+            <h1 class="display-3 py-2 fw-bold fst-italic">Tugas Tugas Pemrograman Web 2021</h1>
+            <h3>Ini adalah sekumpulan Tugas - tugas dari kuliah, praktikum, dan tubes</h3>
 
-    <main style="background: grey;">
-        <section id="product" class="pt-5">
-            <h3 class="text-center pt-1 " style="color: white;">Product</h3>
-            <div class="container mb-5 mt-5">
+            <div class="data">
+                <!-- Tampilan Pencarian -->
                 <?php if (empty($shoes)) : ?>
-                    <tr>
-                        <td colspan="4">
-                            <p style="color: white; font-style:italic; text-align:center;">data tidak ditemukan</p>
-                        </td>
-                    </tr>
+                    <h2 class="my-3 fst-italic text-danger">Data tidak ditemukan</h2>
                 <?php endif; ?>
-                <div class="row">
-                    <?php $i = 1;
-                    foreach ($shoes as $shoe) : ?>
-                        <div class="col-md-3">
-                            <div class="card mt-3">
-                                <div class="product align-items-center p-5 text-center">
-                                    <img src="assets/img/<?= $shoe['picture']; ?>" class="rounded" width="160" style="position: relative; width:100%; display: flex; justify-content: center; align-items: center;"><br>
-                                    <span style="color: white;"><?= $shoe['name']; ?></span> <br><br>
-                                    <!-- button -->
-                                    <a href="php/detail.php?id=<?= $shoe['id']; ?>" class="btn btn-primary" style="border-radius: 5px;">Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+                <a href="kuliah" class="btn btn-secondary"></button>kuliah </a>
+                <a href="praktikum" class="btn btn-secondary"></button>praktikum </a>
+                <a href="mine.php" class="btn btn-secondary"></button">tubes </a>
 
-        </section>
-    </main>
-    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p class="text-center my-0 py-2 bg-main text-sec font-poppins">Copyright 2021 - Hady Ismanto Rachmat</p>
-    </footer>
+    </section>
 
     <!-- Script -->
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/jquery-3.5.1.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
